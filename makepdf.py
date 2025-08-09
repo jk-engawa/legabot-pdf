@@ -31,9 +31,103 @@ FORMS = [
         "type": "car_accident",
         "title": "交通事故証明書交付申請書",
         "path": "templates/template01.pdf",
-        "body": None,  # TBD
-        "active": False
+        "body": {
+            "type": "object",
+            "properties": {
+                "apply_type": {
+                    "type": "string",
+                    "example": "物損"
+                },
+                "date": {
+                    "type": "string",
+                    "example": "2025年8月1日 午前7時"
+                },
+                "place": {
+                    "type": "string",
+                    "example": "東京都中央区日本橋"
+                },
+                "office": {
+                    "type": "string",
+                    "example": "築地警察署"
+                },
+                "apply_month": {
+                    "type": "integer",
+                    "example": 8
+                },
+                "apply_date": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "apply_kana": {
+                    "type": "string",
+                    "example": "サトウジロウ"
+                },
+                "counter_kana": {
+                    "type": "string",
+                    "example": "サトウタロウ"
+                },
+                "note": {
+                    "type": "string",
+                    "example": "なし"
+                },
+                "apply_name": {
+                    "type": "string",
+                    "example": "佐藤次郎"
+                },
+                "counter_name": {
+                    "type": "string",
+                    "example": "佐藤太郎"
+                },
+                "relation": {
+                    "type": "string",
+                    "example": "知人"
+                },
+                "telephone_number": {
+                    "type": "string",
+                    "example": "090-1234-5678"
+                },
+                "number_of_letter": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "visibility_map": {
+                    "type": "object",
+                    "properties": {
+                        "apply_male": {
+                            "type": "boolean",
+                            "example": True
+                        },
+                        "counter_male": {
+                            "type": "boolean",
+                            "example": False
+                        },
+                        "apply_female": {
+                            "type": "boolean",
+                            "example": False
+                        },
+                        "counter_female": {
+                            "type": "boolean",
+                            "example": True
+                        }
+                    }
+                },
+                "template_path": {
+                    "type": "string",
+                    "example": "input/form001.pdf"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "山田太郎"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "東京都千代田区丸の内1-1-1"
+                }
+            }
+        },
+        "active": True
     },
+
     {
         "key": "form002",
         "type": "car_accident",
@@ -124,7 +218,66 @@ FORMS = [
         "type": "car_accident",
         "title": "文書送付嘱託申立書",
         "path": "templates/template06.pdf",
-        "body": None,  # TBD
+        "body": {
+        "type": "object",
+        "properties": {
+            "issue_id": {
+                "type": "string",
+                "example": "令和5年ワ第123号"
+            },
+            "accuser": {
+                "type": "string",
+                "example": "山田花子"
+            },
+            "defendant": {
+                "type": "string",
+                "example": "佐藤太郎"
+            },
+            "court_name": {
+                "type": "string",
+                "example": "東京地方裁判所"
+            },
+            "year": {
+                "type": "integer",
+                "format": "int32",
+                "example": 2025
+            },
+            "month": {
+                "type": "integer",
+                "format": "int32",
+                "example": 8
+            },
+            "date": {
+                "type": "integer",
+                "format": "int32",
+                "example": 6
+            },
+            "lawyer_name": {
+                "type": "string",
+                "example": "木村弁護士"
+            },
+            "keiji": {
+                "type": "string",
+                "example": "供述調書 第1号"
+            },
+            "send_address": {
+                "type": "string",
+                "example": "東京都千代田区霞が関1-1-1"
+            },
+            "send_to": {
+                "type": "string",
+                "example": "〇〇警察署 刑事課 担当者様"
+            },
+            "rissho": {
+                "type": "string",
+                "example": "証拠資料として提出するため"
+            },
+            "template_path": {
+                "type": "string",
+                "example": "input/send_rissho_form.pdf"
+            }
+        }
+    },
         "active": False
     },
     {
